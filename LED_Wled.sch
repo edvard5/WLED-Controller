@@ -763,8 +763,6 @@ Wire Wire Line
 	800  3850 800  4100
 Text GLabel 2350 750  0    50   Input ~ 0
 Vin
-Text GLabel 3800 2650 2    50   Input ~ 0
-LED_VOUT
 Wire Wire Line
 	2800 950  2800 1200
 Wire Wire Line
@@ -1796,9 +1794,6 @@ Wire Wire Line
 Wire Wire Line
 	1300 1850 1450 1850
 Wire Wire Line
-	3750 2650 3800 2650
-Connection ~ 3750 2650
-Wire Wire Line
 	2400 1350 2400 1500
 Connection ~ 2400 1500
 Wire Wire Line
@@ -1873,4 +1868,11 @@ F 10 "Korean Hroparts Elec" H 0   0   0   0001 C CNN "MFR"
 	1    4000 3350
 	0    1    1    0   
 $EndComp
+Connection ~ 3750 2650
+Wire Wire Line
+	3750 2650 3800 2650
+Text GLabel 3800 2650 2    50   Input ~ 0
+LED_VOUT
+Text Notes 6050 2850 0    50   ~ 0
+test
 $EndSCHEMATC
