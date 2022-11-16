@@ -1,6 +1,6 @@
-update=2022-07-22 12:35:09
+update=2022-09-15 10:14:37
 version=1
-last_client=eeschema
+last_client=kicad
 [general]
 version=1
 RootSch=
@@ -245,7 +245,7 @@ dPairViaGap=0.25
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
-PlotDirectoryName=./schematic
+PlotDirectoryName=../remote-led-project/
 SubpartIdSeparator=0
 SubpartFirstId=65
 NetFmtName=

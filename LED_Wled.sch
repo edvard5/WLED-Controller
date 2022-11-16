@@ -39,7 +39,7 @@ Text GLabel 9900 2650 2    50   Input ~ 0
 TXD
 Text GLabel 9900 2850 2    50   Input ~ 0
 RXD
-Text GLabel 9900 2750 2    50   Input ~ 0
+Text GLabel 9900 2750 2    50   Output ~ 0
 LED_OUT_LS1
 $Comp
 L power:GND #PWR02
@@ -96,7 +96,7 @@ Wire Wire Line
 Wire Wire Line
 	6100 5500 6000 5500
 Text GLabel 1300 1850 0    50   Input ~ 0
-LED_VOUT_SWS
+LED_VOUT_HSWS
 Text GLabel 3950 3450 3    50   Input ~ 0
 LED_VOUT
 Wire Wire Line
@@ -255,10 +255,6 @@ Wire Wire Line
 	1350 5100 1350 5700
 Wire Notes Line
 	600  4500 1500 4500
-Wire Wire Line
-	6250 7200 6650 7200
-Wire Wire Line
-	6250 7350 6250 7200
 Wire Wire Line
 	6550 6900 6650 6900
 Wire Wire Line
@@ -469,7 +465,6 @@ F 3 "" H 4100 7450 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	950  7450 1700 7450
-Connection ~ 6250 7200
 Text Notes 5450 7700 0    50   ~ 0
 3.3V LDO for MCU
 Wire Wire Line
@@ -528,7 +523,7 @@ Wire Wire Line
 Wire Wire Line
 	9800 3450 10000 3450
 Wire Wire Line
-	10000 3700 10000 3850
+	10000 3700 10000 3800
 Wire Wire Line
 	9800 2550 9900 2550
 Wire Wire Line
@@ -1251,7 +1246,7 @@ F 10 "1206" H 2400 7200 50  0001 C CNN "JLCSMT_PKG"
 	-1   0    0    1   
 $EndComp
 $Comp
-L LED_Wled-rescue:ACM1211-userdvc L?
+L userdvc:ACM1211 L?
 U 1 1 62DC4842
 P 2950 7200
 AR Path="/62D827B7/62DC4842" Ref="L?"  Part="1" 
@@ -1703,12 +1698,12 @@ Wire Wire Line
 Wire Wire Line
 	2300 4200 2300 4250
 NoConn ~ 9800 3350
-Text GLabel 9900 3150 2    50   Input ~ 0
+Text GLabel 9900 3150 2    50   Output ~ 0
 LED_OUT_LS2
-Text GLabel 9900 3250 2    50   Input ~ 0
+Text GLabel 9900 3250 2    50   Output ~ 0
 LED_OUT_LS3
-Text GLabel 9900 2950 2    50   Input ~ 0
-LED_VOUT_SWS
+Text GLabel 9900 2950 2    50   Output ~ 0
+LED_VOUT_LSWS
 Wire Wire Line
 	9800 3150 9900 3150
 Wire Wire Line
@@ -1829,112 +1824,6 @@ F 3 "" H 7500 5900 50  0001 C CNN
 	1    7500 5900
 	1    0    0    -1  
 $EndComp
-$Comp
-L LED_Wled:AO4485 Q1
-U 1 1 630EC9F1
-P 4600 2700
-F 0 "Q1" H 4900 2250 50  0000 L CNN
-F 1 "AO4485" H 4900 2350 50  0000 L CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 4800 2625 50  0001 L CNN
-F 3 "https://datasheet.lcsc.com/lcsc/1809200040_Alpha---Omega-Semicon-AO4485_C51499.pdf" H 4700 2700 50  0001 L CNN
-F 4 "C51499" H 4600 2700 50  0001 C CNN "JLCSMT"
-F 5 "SOP-8_3.9x4.9x1.27P" H 4600 2700 50  0001 C CNN "JLCSMT_PKG"
-F 6 "AO4485" H 4600 2700 50  0001 C CNN "JLCSMT_Part"
-F 7 "Alpha & Omega Semicon" H 4600 2700 50  0001 C CNN "MANUFACTURER"
-F 8 "[Extended] 40V 10A 1.7W 15mΩ@10V,10A 2.5V@250μA P Channel SOP-8_150mil  MOSFETs ROHS" H -100 400 0   0001 C CNN "Description"
-F 9 "AO4485" H -100 400 0   0001 C CNN "MPN"
-F 10 "Alpha & Omega Semicon" H -100 400 0   0001 C CNN "MFR"
-F 11 "0;0;-90" H -100 400 0   0001 C CNN "JLCPCB_CORRECTION"
-	1    4600 2700
-	1    0    0    1   
-$EndComp
-Wire Wire Line
-	2400 2200 2400 2550
-Wire Wire Line
-	2400 2550 4500 2550
-Connection ~ 2400 2200
-$Comp
-L Device:D_Schottky D?
-U 1 1 630FCF89
-P 4000 2850
-AR Path="/62D827B7/630FCF89" Ref="D?"  Part="1" 
-AR Path="/630FCF89" Ref="D7"  Part="1" 
-F 0 "D7" H 4100 2950 50  0000 L CNN
-F 1 "SS34" H 4000 2750 50  0000 L CNN
-F 2 "Diode_SMD:D_SMA" H 4000 2850 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/lcsc/2204121115_MDD-Microdiode-Electronics--SS34_C8678.pdf" H 4000 2850 50  0001 C CNN
-F 4 "" V 4000 2850 50  0001 C CNN "SKU"
-F 5 "" H -2750 200 50  0001 C CNN "SPR"
-F 6 "SS34" H -2750 -450 50  0001 C CNN "MPN"
-F 7 "MDD（Microdiode Electronics）" H -2750 -450 50  0001 C CNN "MFR"
-F 8 "[Basic] 0.5mA@40V 40V Single 3A 0.55V@3A SMA(DO-214AC)  Schottky Barrier Diodes (SBD) ROHS" H -2750 -450 50  0001 C CNN "Description"
-F 9 "2822566" H 4000 2850 50  0001 C CNN "Analog_A"
-F 10 "C8678" H 4000 2850 50  0001 C CNN "JLCSMT"
-F 11 "SMA,DO-214AC" H 4000 2850 50  0001 C CNN "JLCSMT_PKG"
-F 12 "SS34" H 4000 2850 50  0001 C CNN "JLCSMT_Part"
-F 13 "MDD（Microdiode Electronics）" H 4000 2850 50  0001 C CNN "MANUFACTURER"
-F 14 "0;0;-180" H -50 250 0   0001 C CNN "JLCPCB_CORRECTION"
-	1    4000 2850
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	1750 2650 1750 2850
-Wire Wire Line
-	1750 2850 3850 2850
-Connection ~ 1750 2650
-Wire Wire Line
-	4650 2800 4650 2850
-Wire Wire Line
-	4150 2850 4650 2850
-Connection ~ 4650 2850
-Wire Wire Line
-	4650 2850 4750 2850
-Wire Wire Line
-	4750 2800 4750 2850
-Connection ~ 4750 2850
-Wire Wire Line
-	4750 2850 4850 2850
-Wire Wire Line
-	4850 2800 4850 2850
-Connection ~ 4850 2850
-Wire Wire Line
-	4850 2850 4950 2850
-Wire Wire Line
-	4950 2800 4950 2850
-Connection ~ 4950 2850
-Wire Wire Line
-	4950 2850 5250 2850
-$Comp
-L power:+5V #PWR?
-U 1 1 6315A204
-P 4500 2150
-AR Path="/62D827B7/6315A204" Ref="#PWR?"  Part="1" 
-AR Path="/6315A204" Ref="#PWR0104"  Part="1" 
-F 0 "#PWR0104" H 4500 2000 50  0001 C CNN
-F 1 "+5V" H 4515 2323 50  0000 C CNN
-F 2 "" H 4500 2150 50  0001 C CNN
-F 3 "" H 4500 2150 50  0001 C CNN
-	1    4500 2150
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4500 2150 4500 2250
-Wire Wire Line
-	4500 2250 4650 2250
-Wire Wire Line
-	4850 2250 4850 2300
-Wire Wire Line
-	4650 2250 4650 2300
-Connection ~ 4650 2250
-Wire Wire Line
-	4650 2250 4750 2250
-Wire Wire Line
-	4750 2300 4750 2250
-Connection ~ 4750 2250
-Wire Wire Line
-	4750 2250 4850 2250
-Text GLabel 5250 2850 2    50   Output ~ 0
-LED_5VOUT
 Text GLabel 5550 3450 3    50   Input ~ 0
 LED_5VOUT
 Wire Wire Line
@@ -1961,8 +1850,6 @@ F 10 "[Extended] 74HC 1 Buffers，Non-OppositeSide 4 SOIC-14_150mil  Buffers / D
 	1    2700 3600
 	1    0    0    -1  
 $EndComp
-NoConn ~ 3000 3900
-NoConn ~ 3000 3800
 Wire Wire Line
 	2650 3250 2250 3250
 Wire Wire Line
@@ -2015,18 +1902,299 @@ Wire Wire Line
 $Comp
 L power:GND #PWR?
 U 1 1 62F3C9EE
-P 3300 3750
+P 3600 3600
 AR Path="/62D827B7/62F3C9EE" Ref="#PWR?"  Part="1" 
 AR Path="/62F3C9EE" Ref="#PWR0117"  Part="1" 
-F 0 "#PWR0117" H 3300 3500 50  0001 C CNN
-F 1 "GND" H 3200 3750 50  0000 C CNN
-F 2 "" H 3300 3750 50  0001 C CNN
-F 3 "" H 3300 3750 50  0001 C CNN
-	1    3300 3750
+F 0 "#PWR0117" H 3600 3350 50  0001 C CNN
+F 1 "GND" H 3500 3600 50  0000 C CNN
+F 2 "" H 3600 3600 50  0001 C CNN
+F 3 "" H 3600 3600 50  0001 C CNN
+	1    3600 3600
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	3000 3700 3300 3700
+$Comp
+L LED_Wled:AO4485 Q1
+U 1 1 630EC9F1
+P 5750 1650
+F 0 "Q1" H 6050 1200 50  0000 L CNN
+F 1 "AO4485" H 6050 1300 50  0000 L CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 5950 1575 50  0001 L CNN
+F 3 "https://datasheet.lcsc.com/lcsc/1809200040_Alpha---Omega-Semicon-AO4485_C51499.pdf" H 5850 1650 50  0001 L CNN
+F 4 "C51499" H 5750 1650 50  0001 C CNN "JLCSMT"
+F 5 "SOP-8_3.9x4.9x1.27P" H 5750 1650 50  0001 C CNN "JLCSMT_PKG"
+F 6 "AO4485" H 5750 1650 50  0001 C CNN "JLCSMT_Part"
+F 7 "Alpha & Omega Semicon" H 5750 1650 50  0001 C CNN "MANUFACTURER"
+F 8 "[Extended] 40V 10A 1.7W 15mΩ@10V,10A 2.5V@250μA P Channel SOP-8_150mil  MOSFETs ROHS" H 1050 -650 0   0001 C CNN "Description"
+F 9 "AO4485" H 1050 -650 0   0001 C CNN "MPN"
+F 10 "Alpha & Omega Semicon" H 1050 -650 0   0001 C CNN "MFR"
+F 11 "0;0;-90" H 1050 -650 0   0001 C CNN "JLCPCB_CORRECTION"
+	1    5750 1650
+	1    0    0    1   
+$EndComp
 Wire Wire Line
-	3300 3700 3300 3750
+	5800 1750 5800 1800
+Wire Wire Line
+	5800 1800 5900 1800
+Wire Wire Line
+	5900 1750 5900 1800
+Connection ~ 5900 1800
+Wire Wire Line
+	5900 1800 6000 1800
+Wire Wire Line
+	6000 1750 6000 1800
+Connection ~ 6000 1800
+Wire Wire Line
+	6000 1800 6100 1800
+Wire Wire Line
+	6100 1750 6100 1800
+Connection ~ 6100 1800
+Wire Wire Line
+	6100 1800 6400 1800
+Wire Wire Line
+	6000 1200 6000 1250
+Wire Wire Line
+	5800 1200 5800 1250
+Connection ~ 5800 1200
+Wire Wire Line
+	5800 1200 5900 1200
+Wire Wire Line
+	5900 1250 5900 1200
+Connection ~ 5900 1200
+Wire Wire Line
+	5900 1200 6000 1200
+Text GLabel 6400 1800 2    50   Output ~ 0
+LED_5VOUT
+$Comp
+L power:+5V #PWR?
+U 1 1 6315A204
+P 5500 800
+AR Path="/62D827B7/6315A204" Ref="#PWR?"  Part="1" 
+AR Path="/6315A204" Ref="#PWR0104"  Part="1" 
+F 0 "#PWR0104" H 5500 650 50  0001 C CNN
+F 1 "+5V" H 5515 973 50  0000 C CNN
+F 2 "" H 5500 800 50  0001 C CNN
+F 3 "" H 5500 800 50  0001 C CNN
+	1    5500 800 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 63781B90
+P 4900 1000
+AR Path="/62D827B7/63781B90" Ref="R?"  Part="1" 
+AR Path="/63781B90" Ref="R4"  Part="1" 
+F 0 "R4" H 5100 850 50  0000 R CNN
+F 1 "4.7k" H 4850 1000 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4850 1000 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/lcsc/2206010116_UNI-ROYAL-Uniroyal-Elec-0603WAF4701T5E_C23162.pdf" H 4900 1000 50  0001 C CNN
+F 4 "" H 4900 1000 50  0001 C CNN "Power"
+F 5 "" H -5350 -3050 50  0001 C CNN "SPR"
+F 6 "" H -5350 -3050 50  0001 C CNN "SKU"
+F 7 "0603WAF4701T5E" H -5350 -3050 50  0001 C CNN "MPN"
+F 8 "UNI-ROYAL(Uniroyal Elec)" H -5350 -3050 50  0001 C CNN "MFR"
+F 9 "[Basic] 1/10W Thick Film Resistors 75V ±1% ±100ppm/℃ -55℃~+155℃ 4.7kΩ 0603  Chip Resistor - Surface Mount ROHS" H -5350 -3050 50  0001 C CNN "Description"
+F 10 "0603" H 4900 1000 50  0001 C CNN "JLCSMT_PKG"
+F 11 "C23162" H 4900 1000 50  0001 C CNN "JLCSMT"
+F 12 "0603WAF4701T5E" H 4900 1000 50  0001 C CNN "JLCSMT_Part"
+F 13 "UNI-ROYAL(Uniroyal Elec)" H 4900 1000 50  0001 C CNN "MANUFACTURER"
+	1    4900 1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Diode:BZT52Bxx D7
+U 1 1 63782486
+P 5150 1000
+F 0 "D7" V 5104 1080 50  0000 L CNN
+F 1 "BZT52B15" V 5000 1050 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-123" H 5150 825 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/lcsc/1806101123_Suzhou-Good-Ark-Elec-BZT52B15_C179512.pdf" H 5150 1000 50  0001 C CNN
+F 4 "C179512" H 5150 1000 50  0001 C CNN "JLCSMT"
+F 5 "SOD-123" H 5150 1000 50  0001 C CNN "JLCSMT_PKG"
+F 6 "BZT52C15" H 5150 1000 50  0001 C CNN "JLCSMT_Part"
+F 7 "Jiangsu Changjing Electronics Technology Co., Ltd." H 5150 1000 50  0001 C CNN "MANUFACTURER"
+F 8 "BZT52B15" H 1950 -200 0   0001 C CNN "MPN"
+F 9 "Suzhou Good-Ark Elec" H 1950 -200 0   0001 C CNN "MFR"
+F 10 "0;0;-180" H 1950 -200 0   0001 C CNN "JLCPCB_CORRECTION"
+F 11 "[Extended] 100nA@10.5V 30Ω Single 14.7V~15.3V 500mW 15V SOD-123  Zener Diodes ROHS" H 1950 -200 0   0001 C CNN "Description"
+	1    5150 1000
+	0    1    1    0   
+$EndComp
+$Comp
+L Transistor_BJT:MMBT3904 Q6
+U 1 1 63793575
+P 4800 1450
+F 0 "Q6" H 4650 1250 50  0000 L CNN
+F 1 "MMBT3904" H 4650 1150 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 5000 1375 50  0001 L CIN
+F 3 "https://datasheet.lcsc.com/lcsc/1811011934_Jiangsu-Changjing-Electronics-Technology-Co---Ltd--MMBT3904_C20526.pdf" H 4800 1450 50  0001 L CNN
+F 4 "C20526" H 4800 1450 50  0001 C CNN "JLCSMT"
+F 5 "SOT-23-3" H 4800 1450 50  0001 C CNN "JLCSMT_PKG"
+F 6 "MMBT3904" H 4800 1450 50  0001 C CNN "JLCSMT_Part"
+F 7 "[Basic] 40V 200mW 200mA 100@10mA,1V 300MHz 300mV@50mA,5mA NPN +150℃@(Tj) SOT-23(SOT-23-3)  Bipolar Transistors - BJT ROHS" H 2400 -350 0   0001 C CNN "Description"
+F 8 "MMBT3904" H 2400 -350 0   0001 C CNN "MPN"
+F 9 "Jiangsu Changjing Electronics Technology Co., Ltd." H 2400 -350 0   0001 C CNN "MFR"
+F 10 "0;0;180" H 2400 -350 0   0001 C CNN "JLCPCB_CORRECTION"
+	1    4800 1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R5
+U 1 1 63794D96
+P 4400 1450
+F 0 "R5" H 4459 1496 50  0000 L CNN
+F 1 "1k" H 4459 1405 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4400 1450 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/lcsc/2206010130_UNI-ROYAL-Uniroyal-Elec-0603WAF2401T5E_C22940.pdf" H 4400 1450 50  0001 C CNN
+F 4 "C22940" H 4400 1450 50  0001 C CNN "JLCSMT"
+F 5 "0603" H 4400 1450 50  0001 C CNN "JLCSMT_PKG"
+F 6 "0603WAF2401T5E" H 4400 1450 50  0001 C CNN "JLCSMT_Part"
+F 7 "UNI-ROYAL(Uniroyal Elec)" H 4400 1450 50  0001 C CNN "MANUFACTURER"
+F 8 "UNI-ROYAL(Uniroyal Elec)" H 4400 1450 50  0001 C CNN "MFR"
+F 9 "0603WAF2401T5E" H 4400 1450 50  0001 C CNN "MPN"
+F 10 "" H 4400 1450 50  0001 C CNN "SKU"
+F 11 "" H 4400 1450 50  0001 C CNN "SPR"
+F 12 "[Basic] 1/10W Thick Film Resistors 75V ±1% ±100ppm/℃ -55℃~+155℃ 2.4kΩ 0603  Chip Resistor - Surface Mount ROHS" H 2750 -350 0   0001 C CNN "Description"
+	1    4400 1450
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R11
+U 1 1 637953DD
+P 4550 1650
+F 0 "R11" H 4400 1700 50  0000 L CNN
+F 1 "10k" H 4350 1600 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4550 1650 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/lcsc/2206010216_UNI-ROYAL-Uniroyal-Elec-0805W8F1002T5E_C17414.pdf" H 4550 1650 50  0001 C CNN
+F 4 "C25804" H 4550 1650 50  0001 C CNN "JLCSMT"
+F 5 "0603" H 4550 1650 50  0001 C CNN "JLCSMT_PKG"
+F 6 "0603WAF1002T5E" H 4550 1650 50  0001 C CNN "JLCSMT_Part"
+F 7 "UNI-ROYAL(Uniroyal Elec)" H 4550 1650 50  0001 C CNN "MANUFACTURER"
+F 8 "UNI-ROYAL(Uniroyal Elec)" H 4550 1650 50  0001 C CNN "MFR"
+F 9 "0603WAF1002T5E" H 4550 1650 50  0001 C CNN "MPN"
+F 10 "" H 4550 1650 50  0001 C CNN "SKU"
+F 11 "" H 4550 1650 50  0001 C CNN "SPR"
+F 12 "100mW Thick Film Resistors 75V ±100ppm/℃ ±1% -55℃~+155℃ 10kΩ 0603  Chip Resistor - Surface Mount ROHS" H 2600 -500 0   0001 C CNN "Description"
+	1    4550 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D_Schottky D?
+U 1 1 637ABDF4
+P 5500 1800
+AR Path="/62D827B7/637ABDF4" Ref="D?"  Part="1" 
+AR Path="/637ABDF4" Ref="D8"  Part="1" 
+F 0 "D8" V 5450 1850 50  0000 L CNN
+F 1 "SS34" V 5550 1850 50  0000 L CNN
+F 2 "Diode_SMD:D_SMA" H 5500 1800 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/lcsc/2204121115_MDD-Microdiode-Electronics--SS34_C8678.pdf" H 5500 1800 50  0001 C CNN
+F 4 "" V 5500 1800 50  0001 C CNN "SKU"
+F 5 "" H -1250 -850 50  0001 C CNN "SPR"
+F 6 "SS34" H -1250 -1500 50  0001 C CNN "MPN"
+F 7 "MDD（Microdiode Electronics）" H -1250 -1500 50  0001 C CNN "MFR"
+F 8 "[Basic] 0.5mA@40V 40V Single 3A 0.55V@3A SMA(DO-214AC)  Schottky Barrier Diodes (SBD) ROHS" H -1250 -1500 50  0001 C CNN "Description"
+F 9 "2822566" H 5500 1800 50  0001 C CNN "Analog_A"
+F 10 "C8678" H 5500 1800 50  0001 C CNN "JLCSMT"
+F 11 "SMA,DO-214AC" H 5500 1800 50  0001 C CNN "JLCSMT_PKG"
+F 12 "SS34" H 5500 1800 50  0001 C CNN "JLCSMT_Part"
+F 13 "MDD（Microdiode Electronics）" H 5500 1800 50  0001 C CNN "MANUFACTURER"
+F 14 "0;0;-180" H 1450 -800 0   0001 C CNN "JLCPCB_CORRECTION"
+	1    5500 1800
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4900 850  4900 800 
+Wire Wire Line
+	4900 800  5150 800 
+Wire Wire Line
+	5150 800  5150 850 
+Wire Wire Line
+	5150 800  5500 800 
+Connection ~ 5150 800 
+Wire Wire Line
+	5500 800  5500 1200
+Connection ~ 5500 800 
+Wire Wire Line
+	5500 1200 5800 1200
+Wire Wire Line
+	4900 1150 4900 1200
+Wire Wire Line
+	4900 1200 5150 1200
+Wire Wire Line
+	5150 1200 5150 1150
+Connection ~ 4900 1200
+Wire Wire Line
+	4900 1200 4900 1250
+Wire Wire Line
+	5150 1200 5150 1500
+Wire Wire Line
+	5150 1500 5650 1500
+Connection ~ 5150 1200
+Wire Wire Line
+	4900 1650 4900 1800
+Wire Wire Line
+	4900 1800 5350 1800
+Wire Wire Line
+	5650 1800 5800 1800
+Connection ~ 5800 1800
+Wire Wire Line
+	4500 1450 4550 1450
+Wire Wire Line
+	4550 1450 4550 1550
+Connection ~ 4550 1450
+Wire Wire Line
+	4550 1450 4600 1450
+Wire Wire Line
+	4550 1750 4550 1800
+Wire Wire Line
+	4550 1800 4900 1800
+Connection ~ 4900 1800
+Text GLabel 4200 1450 0    50   Input ~ 0
+LED_VOUT_HSWS
+Wire Wire Line
+	4200 1450 4300 1450
+Text GLabel 3000 3900 2    50   Output ~ 0
+LED_VOUT_HSWS
+Text GLabel 3000 3800 2    50   Input ~ 0
+LED_VOUT_LSWS
+Wire Wire Line
+	3300 3700 3300 3500
+Wire Wire Line
+	3300 3500 3600 3500
+Wire Wire Line
+	3600 3500 3600 3600
+Wire Wire Line
+	6250 7350 6250 7200
+Connection ~ 6250 7200
+Wire Wire Line
+	6250 7200 6650 7200
+$Comp
+L power:PWR_FLAG #FLG?
+U 1 1 637C634A
+P 10000 3800
+AR Path="/62D827B7/637C634A" Ref="#FLG?"  Part="1" 
+AR Path="/637C634A" Ref="#FLG0103"  Part="1" 
+F 0 "#FLG0103" H 10000 3850 50  0001 C CNN
+F 1 "PWR_FLAG" H 10000 3950 50  0000 C CNN
+F 2 "" H 10000 3800 50  0001 C CNN
+F 3 "~" H 10000 3800 50  0001 C CNN
+	1    10000 3800
+	0    1    1    0   
+$EndComp
+Connection ~ 10000 3800
+Wire Wire Line
+	10000 3800 10000 3850
+$Comp
+L power:PWR_FLAG #FLG0104
+U 1 1 6375E9BC
+P 4150 3500
+F 0 "#FLG0104" H 4150 3575 50  0001 C CNN
+F 1 "PWR_FLAG" H 4150 3673 50  0000 C CNN
+F 2 "" H 4150 3500 50  0001 C CNN
+F 3 "~" H 4150 3500 50  0001 C CNN
+	1    4150 3500
+	1    0    0    -1  
+$EndComp
+Connection ~ 4150 3500
 $EndSCHEMATC
