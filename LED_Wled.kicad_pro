@@ -34,9 +34,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.0,
-          "height": 2.0,
-          "width": 2.0
+          "drill": 0.2,
+          "height": 0.4,
+          "width": 0.4
         },
         "silk_line_width": 0.06,
         "silk_text_italic": false,
@@ -177,9 +177,11 @@
       ],
       "track_widths": [
         0.0,
+        0.2,
         0.35,
         0.8,
         1.0,
+        1.5,
         2.0
       ],
       "via_dimensions": [
@@ -188,8 +190,16 @@
           "drill": 0.0
         },
         {
+          "diameter": 0.4,
+          "drill": 0.2
+        },
+        {
           "diameter": 0.6,
           "drill": 0.3
+        },
+        {
+          "diameter": 0.8,
+          "drill": 0.5
         }
       ],
       "zones_allow_external_fillets": false,
@@ -203,7 +213,19 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [],
+    "erc_exclusions": [
+      "lib_symbol_issues|1092200|2590800|00000000-0000-0000-0000-000062dc48b7|00000000-0000-0000-0000-000000000000|||",
+      "lib_symbol_issues|1651000|2133600|290ea567-ab95-4b5d-8218-c4a6d02b08ec|00000000-0000-0000-0000-000000000000|||",
+      "lib_symbol_issues|2552700|2235200|602fd0f1-5007-4efc-9afb-79d88b6547ee|00000000-0000-0000-0000-000000000000|||",
+      "lib_symbol_issues|3276600|1409700|00000000-0000-0000-0000-0000634de701|00000000-0000-0000-0000-000000000000|||",
+      "lib_symbol_issues|3390900|685800|63e93533-4420-4499-b8a5-195112ec086b|00000000-0000-0000-0000-000000000000|||",
+      "lib_symbol_issues|3429000|1358900|00000000-0000-0000-0000-000063347129|00000000-0000-0000-0000-000000000000|||",
+      "lib_symbol_issues|3543300|1447800|00000000-0000-0000-0000-0000633bf0b6|00000000-0000-0000-0000-000000000000|||",
+      "lib_symbol_issues|3657600|1536700|00000000-0000-0000-0000-00006341c96a|00000000-0000-0000-0000-000000000000|||",
+      "pin_to_pin|1117600|749300|f4c88d13-fe54-41b5-a1b0-0d1cc32f5d26|c88cc6f2-caa0-41c5-8b87-acd219e8d4c0|/8af8514d-69f1-4a1e-bc59-fee8f2b81460|/8af8514d-69f1-4a1e-bc59-fee8f2b81460|/8af8514d-69f1-4a1e-bc59-fee8f2b81460",
+      "pin_to_pin|1117600|825500|ed6549b0-1ff6-40b7-959f-0adff054aa8c|dacf4496-4929-4ebe-a38b-716fc6c3cc09|/8af8514d-69f1-4a1e-bc59-fee8f2b81460|/8af8514d-69f1-4a1e-bc59-fee8f2b81460|/8af8514d-69f1-4a1e-bc59-fee8f2b81460",
+      "power_pin_not_driven|901700|2286000|26410a00-3e59-4894-bb5a-1bf4963d6df2|00000000-0000-0000-0000-000000000000|||"
+    ],
     "meta": {
       "version": 0
     },
@@ -406,7 +428,7 @@
       "pin_to_pin": "error",
       "power_pin_not_driven": "error",
       "similar_labels": "warning",
-      "simulation_model_issue": "error",
+      "simulation_model_issue": "ignore",
       "unannotated": "error",
       "unit_value_mismatch": "error",
       "unresolved_variable": "error",
